@@ -1,13 +1,20 @@
 
+const express = require('express')
+const app = express()
 
-var figlet = require("figlet")
-figlet("Hello World!!" , function (err,data){
-    if(err)
-    {
-        console.log("Wrong")
-        console.dir(err);
-        return;
-    }
-    console.log(data)
+app.use(function(req,res,next){
+    console.log("hello")
+    next();
+})
+app.use(function(req,res,next){
+    console.log("hello1")
+    next();
+})
+app.get("/" , function(req,res){
+    res.send("Hello122")
+})
 
-});
+app.get("/profile" , function(req,res){
+    res.send("Hello bye")
+})
+app.listen(3000);

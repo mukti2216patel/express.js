@@ -92,3 +92,5 @@ db.courses.updateMany({price:1000} , {$set:{price:0}});
 
 //delete
 db.courses.deleteMany({price:0});
+
+
